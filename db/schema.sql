@@ -1,4 +1,3 @@
--- creates database and set up table
 create database burgers_db;
 use burgers_db;
 create table burgers (

@@ -1,4 +1,3 @@
--- creates initial database values
 INSERT INTO burgers (burger_name, devoured
 ) VALUES
 ("Double Cheese Burger",0),
