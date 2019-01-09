@@ -1,0 +1,87 @@
+<div class="container">
+    <div class="row">
+        <h1 class="title">
+            Eat Da Burger!
+        </h1>
+    </div>
+    <div class="row">
+        <img alt="order icon" class="order-icon" src="assets/img/burger.jpg">
+        </img>
+    </div>
+		<div class= "row">
+			<div class="col s12 m6 l5">
+				<h4 class="burger-title">Ordered Burgers</h4>
+			</div>
+			<div class="col s12 m6 l5 offset-l2">
+				<h4 class ="burger-title"> Devoured Burgers</h4>
+			</div>
+		</div>
+    <div class="row">
+        <div class="col s12 m6 l5">
+            <ul class="collection">
+                <div class="ordered-burgers">
+                </div>
+            </ul>
+        </div>
+        <div class="col s12 m6 l5 offset-l2">
+            <ul class="collection">
+                <div class="devoured-burgers">
+                </div>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m6 l3">
+            <form action="/" class="create-form" method="POST">
+                <div class="form-group">
+                    <label class="burg" for="burg">
+                        Burger:
+                    </label>
+                    <input id="burg" name="burger" type="text">
+                    </input>
+                </div>
+                <button class="waves-effect waves-light btn" type="submit">
+                    Add Burger
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{{#each burgers}}
+	{{#if devoured}}
+<li class="collection-item devoured"> 
+    <input name="id" type="hidden" value="{{this.id}}">
+        <span name="burger-name">
+        </span>
+        {{this.burger_name}}
+    </input>
+</li>
+{{else}}
+<li class="collection-item not-devoured">
+    <form action="/?_method=PUT" class="create-update-form" method="POST">
+        <input name="id" type="hidden" value="{{this.id}}">
+            <div class="row center-vert">
+                <div class="col s6">
+                    <p>
+                        <span name="burger-name">
+                        </span>
+                        {{this.burger_name}}
+                    </p>
+                </div>
+                <div class="col s6 submit-parent">
+                    <button class="secondary-content waves-effect waves-light  btn" type="submit">
+                        Devour!
+                    </button>
+                </div>
+            </div>
+        </input>
+    </form>
+</li>
+{{/if}}
+{{/each}}
+	{{!-- appends burger to devoured group or ordered group on submit button click --}}
+<script>
+    $('.devoured').appendTo($('.devoured-burgers'));
+	$('.not-devoured').appendTo($('.ordered-burgers'));
+</script>
+

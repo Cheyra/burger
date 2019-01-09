@@ -1,0 +1,43 @@
+
+	body{
+		background-color:aqua;
+		}
+	.title {
+		margin-top: 70px;
+		font-family: 'ZCOOL KuaiLe', cursive;
+		text-align: center;
+		color: limegreen;
+	}
+	.burger-title {
+		font-family: 'Coiny', cursive;
+		color: lightcyan
+	}
+	
+	.order-icon {
+		display: block;
+	    margin: auto;
+			width: 200px;
+	}
+	.burger {
+		color:lime
+	}
+	p {
+		font-family: 'Open Sans', sans-serif;
+		vertical-align: middle;
+		line-height: 36px;
+		margin: 0px;
+	}
+	
+	.center-vert {
+		margin: 0px;
+	}
+	li.collection-item.devoured, li.collection-item.not-devoured {
+		background-color: lightcyan;
+	}
+	.devoured-burgers {
+		text-decoration: line-through;
+		color: limegreen;
+	}
+	.btn{
+		background-color: limegreen
+	}
