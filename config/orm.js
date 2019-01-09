@@ -10,13 +10,13 @@ var orm = {
 			cb(result);
 		});
 	},
-	insert: function(table, objCol, objData, cb) {
+	insertOne: function(table, objCol, objData, cb) {
 		var queryString = "INSERT INTO ?? (??) VALUES (?);";
 		connection.query(queryString, [table, objCol, objData], function(err, result) {
 			cb(result);
 		});
 	},
-	update: function(table, objCol, objData, conditionCol, conditionData, cb) {
+	updateOne: function(table, objCol, objData, conditionCol, conditionData, cb) {
 		var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
 		connection.query(queryString, [table, objCol, objData, conditionCol, conditionData], function(err, result) {
 			cb(result);
